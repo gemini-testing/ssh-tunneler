@@ -1,6 +1,6 @@
 {
   "name": "ssh-tunneler",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Plugin for gemini and hermione to set up ssh tunnel while running tests",
   "main": "lib/tunnel.js",
   "scripts": {
