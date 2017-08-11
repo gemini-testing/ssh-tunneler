@@ -8,13 +8,13 @@ describe('url-decorator', () => {
     const tunnel = (opts) => _.defaults(opts || {}, {host: 'localhost', port: 8080});
 
     it('should not redefine protocol by default', () => {
-        const decoratedUri = decorator.create()('https://', tunnel());
+        const decoratedUri = decorator.create()('https://host', tunnel());
 
         assert.equal(urijs(decoratedUri).protocol(), 'https');
     });
 
     it('should use protocol which is specified in options', () => {
-        const decoratedUri = decorator.create({protocol: 'https'})('http://', tunnel());
+        const decoratedUri = decorator.create({protocol: 'https'})('http://host', tunnel());
 
         assert.equal(urijs(decoratedUri).protocol(), 'https');
     });
@@ -43,7 +43,7 @@ describe('url-decorator', () => {
     it('should apply protocol from options before custom url decorator', () => {
         const urlDecorator = sinon.stub();
 
-        decorator.create({urlDecorator, protocol: 'https'})('http://', tunnel());
+        decorator.create({urlDecorator, protocol: 'https'})('http://host', tunnel());
 
         assert.calledWith(urlDecorator, sinon.match(/^https:\/\//));
     });
