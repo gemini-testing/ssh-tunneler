@@ -36,8 +36,8 @@
     "chai-as-promised": "^6.0.0",
     "eslint": "^3.11.1",
     "eslint-config-gemini-testing": "^2.4.0",
+    "gemini-core": "gemini-testing/gemini-core#feature/emitters",
     "mocha": "^3.2.0",
-    "qemitter": "^1.1.0",
     "sinon": "^1.17.6"
   }
 }

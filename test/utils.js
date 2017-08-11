@@ -1,9 +1,9 @@
 'use strict';
 
-const QEmitter = require('qemitter');
+const AsyncEmitter = require('gemini-core').AsyncEmitter;
 
 exports.initTool = (events, config) => {
-    const tool = new QEmitter();
+    const tool = new AsyncEmitter();
 
     tool.events = events;
     tool.config = config;
